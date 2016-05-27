@@ -1,5 +1,10 @@
 package sample;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.util.UUID;
+
+import static java.net.HttpURLConnection.HTTP_BAD_REQUEST;
 import static spark.Spark.*;
 
 /**
@@ -7,14 +12,12 @@ import static spark.Spark.*;
  */
 public class Main {
     public static void main(String[] args) {
+        runServer();
+    }
 
-        System.out.println("Hello oleh");
+    public static void runServer(){
 
-        get("/hello" ,(request, response) -> {
-
-
-            return "Hello world";
-        });
+        get("/hello" ,(request, response) -> "Hello world");
 
         post("/hello",(req,resp)-> "Hello from post");
 
