@@ -10,7 +10,11 @@ public class Main {
 
         System.out.println("Hello oleh");
 
-        get("/hello" ,(request, response) -> "Hello from get");
+        get("/hello" ,(request, response) -> {
+
+
+            return "Hello world";
+        });
 
         post("/hello",(req,resp)-> "Hello from post");
 
